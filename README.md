@@ -78,6 +78,7 @@ cd vet_clinic
 Checkout the branch
 ```
 git checkout dev
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
