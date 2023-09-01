@@ -26,6 +26,7 @@ COMMIT;
 
 BEGIN;
 DELETE FROM animals;
+SELECT * FROM animals;
 ROLLBACK;
 SELECT * FROM animals;
 
@@ -39,7 +40,7 @@ BEGIN;
 SAVEPOINT bmg1;
 UPDATE animals SET weight_kg = weight_kg * -1;
 SELECT * FROM animals;
-ROLLBACK;
+ROLLBACK TO bmg1;
 SELECT * FROM animals;
 
 BEGIN;
