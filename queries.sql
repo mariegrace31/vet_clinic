@@ -92,7 +92,7 @@ SELECT o.full_name, COUNT(*) AS animal_count FROM owners o JOIN animals a ON o.i
 SELECT animals.name FROM visits JOIN vets ON visits.vets_id = vets.id  JOIN animals ON visits.animals_id = animals.id WHERE vets.name = 'Vet William Tatcher' ORDER BY date_of_visit DESC LIMIT 1;
 
 -- How many different animals did Stephanie Mendez see?
-SELECT COUNT(date_of_visit) FROM visits JOIN vets ON vets_id = vets.id WHERE vets.name = 'Vet Stephanie Mendez'; 
+SELECT DISTINCT animals.name FROM visits LEFT JOIN animals ON animals.id = visits.animal_id LEFT JOIN vets ON vets.id = visits.vet_id WHERE vets.name = 'Stephanie Mendez';
 
 -- List all vets and their specialties, including vets with no specialties.
 SELECT vets.name, species.name FROM vets LEFT JOIN specializations ON vets.id = vets_id LEFT JOIN species ON species.id = species_id;
