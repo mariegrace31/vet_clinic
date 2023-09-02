@@ -52,3 +52,5 @@ CREATE TABLE visits (
   FOREIGN KEY (animals_id) REFERENCES animals(id),
   FOREIGN KEY (vets_id) REFERENCES vets(id)
 );
+
+ALTER TABLE visits ADD COLUMN date_of_visit date;
